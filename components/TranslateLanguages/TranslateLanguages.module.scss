@@ -1,0 +1,15 @@
+@import '../../styles/responsive';
+
+.translate_languages {
+	display: grid;
+	gap: 2rem;
+	padding: 2rem;
+	width: 100%;
+	@include breakpoint {
+		grid-template-columns: 1fr 1fr;
+	}
+	&__editor {
+		border-radius: 1rem;
+		overflow: hidden;
+	}
+}

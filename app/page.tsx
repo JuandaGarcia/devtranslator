@@ -1,7 +1,7 @@
-import React from 'react'
+import TranslateLanguages from 'components/TranslateLanguages/TranslateLanguages'
 
 const Home = () => {
-	return <div>Home</div>
+	return <TranslateLanguages />
 }
 
 export default Home
