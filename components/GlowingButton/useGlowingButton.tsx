@@ -1,5 +1,5 @@
-import useElementSize from 'lib/useElementSize'
-import createSVGMask from 'lib/createSVGMask'
+import useElementSize from 'hooks/useElementSize'
+import createSVGMask from 'utils/createSVGMask'
 import { useMotionValue } from 'framer-motion'
 
 const useGlowingButton = () => {

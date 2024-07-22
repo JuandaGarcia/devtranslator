@@ -4,6 +4,10 @@ import { PropsWithChildren, useEffect, useState } from 'react'
 import s from './AppLayout.module.scss'
 import Header from 'components/Header/Header'
 import Footer from 'components/Footer/Footer'
+import { Inter } from 'next/font/google'
+import ASCII from 'utils/ASCII'
+
+const inter = Inter({ subsets: ['latin'] })
 
 const BACKGROUNDS = ['#020308', '#010609', '#0B020D', '#090401', '#010902']
 
@@ -19,17 +23,19 @@ export default function AppLayout({ children }: PropsWithChildren) {
 		return () => clearTimeout(bgTimeOut)
 	}, [bg])
 
+	useEffect(() => ASCII(), [])
+
 	return (
-		<div
-			className={s.layout}
+		<body
+			className={`${s.layout} ${inter.className}`}
 			style={{
 				background: `radial-gradient(63.94% 63.94% at 50% 0%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%), ${BACKGROUNDS[bg]}`,
 			}}
 		>
-			<Stars />
 			<Header />
 			{children}
 			<Footer />
+			<Stars />
 			{/* <motion.div
 				className={s.layout__alert}
 				initial={{ opacity: 0, y: 100 }}
@@ -50,6 +56,6 @@ export default function AppLayout({ children }: PropsWithChildren) {
 			>
 				<span>Move away your cursor to see the magic ✨</span>
 			</motion.div> */}
-		</div>
+		</body>
 	)
 }

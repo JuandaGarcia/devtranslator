@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import AppLayout from 'components/AppLayout/AppLayout'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
 	title: 'DevTranslator',
@@ -18,9 +15,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="es">
-			<body className={inter.className}>
-				<AppLayout>{children}</AppLayout>
-			</body>
+			<AppLayout>{children}</AppLayout>
 		</html>
 	)
 }

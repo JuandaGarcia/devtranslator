@@ -1,15 +1,29 @@
-@import '../../styles/responsive';
+@import '../../styles/mixins/responsive';
 
 .translate_languages {
 	display: grid;
 	gap: 2rem;
-	padding: 2rem;
 	width: 100%;
+	margin: 0 auto;
+	padding: 2rem;
+	max-width: var(--page-max-width);
 	@include breakpoint {
 		grid-template-columns: 1fr 1fr;
+	}
+	&__selectors {
+		grid-column: 1 / -1;
 	}
 	&__editor {
 		border-radius: 1rem;
 		overflow: hidden;
+	}
+	&__button {
+		grid-column: 1 / -1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&__text {
+			padding: 0 1rem;
+		}
 	}
 }

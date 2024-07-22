@@ -1,4 +1,4 @@
-@import '../../../styles/mixins/text_gradient';
+@import '../../styles/mixins/text_gradient';
 
 .glowing_button {
 	position: relative;
@@ -146,6 +146,9 @@
 				opacity: 0.7;
 				animation: 0.4s buttonHover forwards;
 			}
+		}
+		&:disabled {
+			cursor: not-allowed;
 		}
 
 		span {

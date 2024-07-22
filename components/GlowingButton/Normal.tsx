@@ -24,7 +24,7 @@ export default function NormalButton({
 				<motion.div {...properties} className={s.glowing_button__stars} />
 			)}
 			<button ref={buttonRef} className={s.glowing_button__button} {...props}>
-				<span>{children || 'Button'}</span>
+				{children || 'Button'}
 			</button>
 		</div>
 	)
